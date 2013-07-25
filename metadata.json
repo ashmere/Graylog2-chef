@@ -13,10 +13,11 @@
   "suggestions": {
   },
   "platforms": {
-    "ubuntu": ">= 0.0.0"
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
   },
   "long_description": "",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "recommendations": {
   },
   "recipes": {
