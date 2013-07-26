@@ -1,4 +1,4 @@
-default[:graylog2][:repo] = 'http://download.graylog2.org'
+default[:graylog2][:repo] = 'https://github.com/Graylog2'
 default[:graylog2][:basedir] = "/var/graylog2"
 default[:graylog2][:server][:version] = "0.12.0"
 default[:graylog2][:web_interface][:version] = "0.12.0"
