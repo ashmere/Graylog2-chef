@@ -21,9 +21,15 @@
 include_recipe "mongodb::10gen_repo"
 include_recipe "mongodb::default"
 
-# Install required APT packages
-#package "openjdk-7-jre"
-package "openjdk-6-jre"
+# Install required java apt packages
+case node.platform_family
+when 'debian'
+  if(node.platform == 'ubuntu')
+    package "openjdk-7-jre"
+  else
+    package "openjdk-6-jre"
+  end
+end
 
 # Create the release directory
 directory "#{node[:graylog2][:basedir]}/rel" do
