@@ -78,8 +78,8 @@ external_hostname = node[:graylog2][:external_hostname]     ? node[:graylog2][:e
 
 # Create general.yml
 template "#{node.graylog2.basedir}/web/config/general.yml" do
-  owner "nobody"
-  group "nogroup"
+  owner "www-data"
+  group "www-data"
   mode 0644
   variables( :external_hostname => external_hostname )
 end
@@ -87,14 +87,14 @@ end
 # Create config files
 %w{ indexer ldap mongoid }.each do |yml_file|
   template "#{node[:graylog2][:basedir]}/web/config/#{yml_file}.yml" do
-    owner "nobody"
-    group "nogroup"
+    owner "www-data"
+    group "www-data"
     mode 0644
   end
 end
 
-# Chown the Graylog2 directory to nobody/nogroup to allow web servers to serve it
-execute "sudo chown -R nobody:nogroup graylog2-web-interface-#{node[:graylog2][:web_interface][:version]}" do
+# Chown the Graylog2 directory to www-data/www-data to allow web servers to serve it
+execute "sudo chown -R www-data:www-data graylog2-web-interface-#{node[:graylog2][:web_interface][:version]}" do
   cwd "#{node[:graylog2][:basedir]}/rel"
   not_if do
     File.stat("#{node[:graylog2][:basedir]}/rel/graylog2-web-interface-#{node[:graylog2][:web_interface][:version]}").uid == 65534
