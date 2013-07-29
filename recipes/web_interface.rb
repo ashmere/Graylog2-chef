@@ -66,7 +66,7 @@ end
 # Perform bundle install on the newly-installed Graylog2 web interface version
 bash "bundle install" do
   cwd "#{node[:graylog2][:basedir]}/web"
-  code "rbenv local #{node[:graylog2][:ruby_version]} && source /etc/profile.d/rbenv.sh && bundle install --deployment --binstubs"
+  code "/opt/rbenv/bin/rbenv local #{node[:graylog2][:ruby_version]} && source /etc/profile.d/rbenv.sh && bundle install --deployment --binstubs"
   subscribes :run, resources(:link => "#{node[:graylog2][:basedir]}/web"), :immediately
 end
 
