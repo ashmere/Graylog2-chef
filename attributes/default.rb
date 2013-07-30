@@ -30,8 +30,8 @@ default[:graylog2][:stream_subscriptions_cron_minute] = "*/15"
 default[:graylog2][:external_hostname] = nil
 default[:graylog2][:server_name] = "graylog2"
 
-default[:graylog2][:ruby_version] = "1.9.3-p392"
-default[:graylog2][:passenger_version] = "4.0.5"
+default[:graylog2][:ruby_version] = "1.9.3-p448"
+default[:graylog2][:passenger_version] = "4.0.10"
 
 default[:graylog2][:unicorn][:worker_processes] = 1
 default[:graylog2][:unicorn][:timeout] = 30
