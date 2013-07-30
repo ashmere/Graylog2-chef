@@ -1,7 +1,7 @@
 Description
 ===========
 
-Installs and configures a Graylog2 server on Ubuntu systems (10.04 and up at present).
+Installs and configures a Graylog2 server on Ubuntu systems (10.04 and up at present) & Debian.
 
 This is a Chef re-engineering of the [Sean Porter][seanp] Linode [StackScript for graylog2][stackscript].
 
@@ -50,6 +50,10 @@ trying to get Graylog2 to 'catch' syslog messages, you may have to disable your 
 syslog-ng as they may have already snabbled up port 514.  The cookbook *does* sudo-start Graylog2, so 
 it should be able to bind udp/514 at startup.  Stop/Start/restart Graylog2 using the installed init.d
 script (/etc/init.d/graylog2 stop|start|restart).  TODO: convert to an upstart job.
+
+With graylog-web-interface 0.12.0 onwards a secret is needed this should be customized with the attribute
+default[:graylog2][:secret]
+ 
 
 License and Author
 ==================

@@ -17,4 +17,5 @@
   PassengerRoot /opt/rbenv/versions/<%= node[:graylog2][:ruby_version] %>/lib/ruby/gems/1.9.1/gems/passenger-<%= node[:graylog2][:passenger_version] %>
   PassengerDefaultRuby /opt/rbenv/versions/<%= node[:graylog2][:ruby_version] %>/bin/ruby
   SetEnv GEM_PATH <%= node[:graylog2][:basedir] %>/web/vendor/bundle/ruby/1.9.1/gems/
+  PassengerDefaultUser <%= node[:apache][:user] %>
 </VirtualHost>

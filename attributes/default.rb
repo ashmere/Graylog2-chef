@@ -32,6 +32,7 @@ default[:graylog2][:server_name] = "graylog2"
 
 default[:graylog2][:ruby_version] = "1.9.3-p448"
 default[:graylog2][:passenger_version] = "4.0.10"
+default[:graylog2][:secret] = "284374002ab9473c97b1642cb94741c3237838ed6210b9603ce035bebc5b982a639386751361919b2e71bdd5d161ad69511ssjjcbnsdkcgusdudsj5410"
 
 default[:graylog2][:unicorn][:worker_processes] = 1
 default[:graylog2][:unicorn][:timeout] = 30
